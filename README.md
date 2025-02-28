@@ -33,9 +33,3 @@ For detailed documentation and support, visit [Vexoniq.com](https://vexoniq.com/
 
 ## License
 This theme is licensed under the **GPL v3** license.
-
-## Keywords (For SEO Optimization)
-WordPress theme, SEO-friendly WordPress theme, lightweight WordPress theme, responsive WordPress theme, fast WordPress theme, WordPress blog theme, WordPress business theme, WooCommerce theme, custom WordPress theme, Gutenberg theme, Elementor theme.
-
----
-Enhance your website with the **Vexoniq WordPress Theme** – a perfect blend of **speed, SEO, and customization**!
