@@ -70,25 +70,11 @@ Text Domain: vexoniq-classic-theme
     font-style: normal;
 }
 
-
-@font-face {
-    font-family: 'DM Sans';
-    src: url('assets/fonts/nunito-latin/DMSans-Bold.woff2') format('woff2'),
-         url('assets/fonts/nunito-latin/DMSans-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Nunito', sans-serif;
-}
-
-
 body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
 
 }
