@@ -11,8 +11,13 @@ Tags: custom-header, flexible-header, blog, portfolio
 Text Domain: vexoniq-classic-theme
 */
 
-/* Header */
+/* Import Library */
 
+
+
+
+
+/* Font Faces */
 @font-face {
     font-family: 'Nunito';
     src: url('assets/fonts/nunito-latin/nunito-latin-300-italic.woff2') format('woff2'),
@@ -70,35 +75,89 @@ Text Domain: vexoniq-classic-theme
     font-style: normal;
 }
 
-body{
+/* General Styles */
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     font-family: 'Nunito', sans-serif;
     margin: 0;
-
-}
-
-.top-bar{
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-size: 12px;
-    width: 100%;
-    margin: 0;
-}
-
-.site-header {
-    background: white;
-    border: 0.5px rgb(90, 88, 88);
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+
+/* Top Bar Complete Css */
+.top-bar {
+    background-color: black;
+}
+
+.top-bar .container{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px 0;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.top-bar a:hover, .dashicons:hover {
+    text-decoration: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.dashicons-facebook {
+    color: #1877F2;
+}
+.dashicons-instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: white;
+    border-radius: 5px;
+}
+.dashicons-youtube {
+    color: red;
+}
+.dashicons-linkedin {
+    color: #0077B5;
+}
+.dashicons-twitter {
+    color: 	#1da1f2;
+}
+.dashicons-phone, .dashicons-email {
+    color: white
+}
+.dashicons{
+    display: inline-block;
+}
+
+
+
+
+
+
+.site-header {
+    background: white;
+    border: 0.5px rgb(90, 88, 88);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
@@ -110,11 +169,11 @@ body{
 .logo a {
     font-size: 24px;
     font-weight: bold;
-    /* color: #ffffff; */
     text-decoration: none;
 }
 
-.logo a img{
+
+.logo a img {
     width: 120px;
 }
 
@@ -142,8 +201,7 @@ body{
 }
 
 /* Homepage Content */
-/* Blog Post Box */
-.home-page-posts{
+.home-page-posts {
     margin-top: 10px;
 }
 
@@ -195,20 +253,10 @@ body{
 }
 
 /* Layout Styling */
-.content-wrapper {
-    display: flex;
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Main Content (70% Width) */
 .main-content {
     width: 70%;
 }
 
-/* Sidebar (30% Width) */
 .sidebar {
     width: 30%;
     height: 50vh;
@@ -243,18 +291,16 @@ body{
     text-decoration: underline;
 }
 
-
-.archive-header{
+/* Archive Header */
+.archive-header {
     background-color: #666;
-    color:white;
+    color: white;
     text-align: center;
 }
 
-.page .title{
-    text-align: center;
-}
-
-.post .title{
+/* Page and Post Titles */
+.page .title,
+.post .title {
     text-align: center;
 }
 

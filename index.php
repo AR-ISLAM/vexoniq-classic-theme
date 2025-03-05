@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         
         <!-- Main Content: Post Boxes -->
-        <div class="main-content">
+        <section class="main-content">
             <?php while (have_posts()) { 
                 the_post(); ?>
                 <div class="post-box">
@@ -17,7 +17,7 @@
                     <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
                 </div>
             <?php } ?>
-        </div>
+        </section>
 
         <!-- Sidebar: Categories -->
         <aside class="sidebar">
@@ -34,9 +34,5 @@
 
     </div>
 </div>
-
-
-
-
 
 <?php get_footer() ?>
