@@ -1,0 +1,136 @@
+/* Top Bar Styling */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    z-index: 1001;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover, 
+.top-bar a:focus {
+    color: #5ea335;
+}
+
+/* Dashicons Styling */
+.dashicons {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.dashicons:hover {
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+    transform: scale(1.1);
+}
+
+/* Social Media Icons */
+.dashicons-facebook { color: #1877F2; }
+.dashicons-youtube { color: red; }
+.dashicons-linkedin { color: #0077B5; }
+
+/* Location & Language Section */
+.location-translate-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.topbar-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+.topbar-location .dashicons {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    font-size: 1rem;
+    background-color: #5ea335;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-location a {
+    font-size: 0.8rem;
+}
+
+/* Modal Styling */
+.location-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 650px;
+    height: 60%;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 575px) {
+    .topbar-location .location-text {
+        display: none;
+    }
+
+    .topbar-location {
+        margin-right: 10px;
+    }
+
+    .modal-content{
+        padding: 10px;
+    }
+}

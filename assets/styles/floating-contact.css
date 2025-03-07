@@ -1,0 +1,130 @@
+/* Floating Contact Bar */
+.floating-contact {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 999;
+}
+
+.floating-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    position: relative; /* Needed for positioning the number circle */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Icon Styling */
+.floating-contact .dashicons {
+    font-size: 24px;
+    color: white;
+}
+
+/* Circle with Number Styling */
+.icon-number {
+    position: absolute;
+    bottom: 5px; /* Position it slightly below the icon */
+    right: -5px; /* Position it slightly to the right of the icon */
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Contact Details (Initially Hidden) */
+.contact-info {
+    position: absolute;
+    display: hidden;
+    left: 40px; /* Position text next to the icon */
+    background: rgba(94, 163, 53, 1); /* Same as floating bar */
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Match height of icon */
+    opacity: 0;
+    transform: translateX(-10px); /* Slightly off-screen */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Show Contact Details on Hover */
+.floating-contact a:hover .contact-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hover Effect on Icon */
+.floating-contact a:hover {
+    /* background: rgba(255, 255, 255, 0.1); */
+    transform: scale(1.1); /* Increase icon size */
+}
+
+/* Responsive - Move to Bottom for Small Screens */
+@media screen and (max-width: 575px) {
+    .floating-contact {
+        position: fixed;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 0;
+        padding: 5px 0; /* Reduced padding to decrease height */
+        height: 50px; /* Set a fixed height for a more compact look */
+        transform: none; /* Remove vertical centering */
+    }
+
+    .floating-contact a {
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 5px; /* Reduced padding */
+        display: flex; /* To ensure the content is vertically aligned */
+    }
+
+    /* Icon Styling */
+    .floating-contact .dashicons {
+        font-size: 24px;
+        color: white;
+        transition: transform 0.3s ease-in-out; /* Smooth transition for scaling the icon */
+        height: auto;
+        width: auto;
+    }
+
+    /* Hover Effect on Icon */
+    .floating-contact a:hover {
+        /* background: rgba(255, 255, 255, 0.1); */
+        transform: scale(1.2); /* Increase icon size */
+    }
+
+    /* Disable text hover effect on mobile */
+    .contact-info {
+        display: none !important;
+    }
+
+    .floating-contact a:hover {
+        background: none; /* No background change for the entire a element */
+    }
+}

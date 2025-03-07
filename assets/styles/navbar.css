@@ -1,0 +1,157 @@
+/* Make Navbar Sticky */
+.site-navbar {
+    position: fixed;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    padding: 15px 0;
+    z-index: 11000; /* Ensure it stays on top */
+}
+
+/* Add Padding to Prevent Content Overlapping */
+body {
+    padding-top: 122px; /* Adjust according to navbar height */
+}
+
+/* Navbar Inner Wrapper */
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo on the left, menu on the right */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styling */
+.logo img {
+    height: 30px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Navigation Menu */
+.main-nav .nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding:0;
+    margin:0;
+}
+
+/* Navigation Links */
+.main-nav .nav-menu ul{
+    margin-bottom: 0;
+}
+.main-nav .nav-menu li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-menu li a {
+    display: inline-block; /* Ensures it doesn’t stretch */
+    white-space: nowrap; /* Prevents wrapping */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav .nav-menu li a:hover {
+    color: #5ea335; /* Gold color on hover */
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile Sidebar (Hidden by Default) */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 12000;
+}
+
+.mobile-sidebar li {
+    list-style: none;
+}
+
+/* Show Sidebar */
+.mobile-sidebar.active {
+    right: 0;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-menu li {
+    padding: 12px 0;
+}
+
+.mobile-nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.mobile-nav-menu li a:hover {
+    color: #5ea335;
+}
+
+/* Google Translate */
+.gt_white_content a{
+    color: black
+}
+
+/* Show Hamburger Button on Mobile */
+@media screen and (max-width: 991px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px){
+
+}
