@@ -216,3 +216,22 @@ body {
     margin-top: auto; /* Keeps the footer at the bottom */
 }
 
+.product-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.product-thumbnail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.product-excerpt {
+    font-size: 1em;
+    color: #666;
+}

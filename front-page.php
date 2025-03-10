@@ -1,13 +1,14 @@
-<?php get_header() ?>
-<div class="archive-header">
-    <h2><?php the_archive_title() ?></h2>
-</div>
+<?php
+get_header();
+?>
 
 <div class="container">
+    <h1>HomePage</h2>
+
     <div class="content-wrapper">
         
         <!-- Main Content: Post Boxes -->
-        <div class="main-content">
+        <section class="main-content">
             <?php while (have_posts()) { 
                 the_post(); ?>
                 <div class="post-box">
@@ -20,7 +21,7 @@
                     <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
                 </div>
             <?php } ?>
-        </div>
+        </section>
 
         <!-- Sidebar: Categories -->
         <aside class="sidebar">
@@ -38,6 +39,6 @@
     </div>
 </div>
 
+</div>
+
 <?php get_footer(); ?>
-
-

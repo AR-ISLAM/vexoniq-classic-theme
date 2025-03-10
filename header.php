@@ -89,6 +89,33 @@
             <div class="menu-toggle" id="mobile-menu">
                 ☰
             </div>
+            <form action="<?php echo home_url('/products/'); ?>" method="GET" class="search-form">
+    <input type="text" name="s" placeholder="Search products..." required>
+    <button type="submit">Search</button>
+</form>
+
+<style>
+    .search-form {
+        display: flex;
+        gap: 5px;
+    }
+
+    .search-form input {
+        padding: 8px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-form button {
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
         </div>
     </div>
 </header>
