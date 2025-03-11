@@ -2,6 +2,42 @@
 get_header();
 ?>
 
+
+<div id="front-page-carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#front-page-carousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#front-page-carousel" data-bs-slide-to="1"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block" src="https://vexoniq.com/wp-content/uploads/2025/03/home_banner_1.jpg" alt="First slide">
+      <div class="carousel-caption custom-caption">
+        <h3 class="display-5 text-white fw-bold">Connect With Precision, Create With Precision</h3>
+        <p class="lead fw-normal text-white mt-4">Reliable Connecting is for better communication</p>
+        <a href="#services" class="btn btn-success btn-lg mt-3">View More</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="https://vexoniq.com/wp-content/uploads/2025/03/home_banner_2.webp" alt="Second slide">
+      <div class="carousel-caption custom-caption">
+        <h3 class="display-5 text-white fw-bold">Connect With Precision, Create With Precision</h3>
+        <p class="lead fw-normal text-white mt-4">Reliable Connecting is for better communication</p>
+        <a href="#services" class="btn btn-success btn-lg mt-3">View More</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#front-page-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#front-page-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
 <div class="container">
     <h1>HomePage</h2>
 
@@ -42,3 +78,13 @@ get_header();
 </div>
 
 <?php get_footer(); ?>
+
+<script>
+jQuery(document).ready(function($) {
+    $('.carousel').carousel({
+        interval: 3000, // Change slide every 3 seconds
+        pause: 'hover',
+        wrap: true
+    });
+});
+</script>

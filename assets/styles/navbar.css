@@ -1,24 +1,23 @@
 /* Make Navbar Sticky */
 .site-navbar {
     position: fixed;
-    top: 42px;
+    top: 41px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    background: rgba(0, 0, 0, 0.8);
     padding: 15px 0;
-    z-index: 11000; /* Ensure it stays on top */
-}
-
-/* Add Padding to Prevent Content Overlapping */
-body {
-    padding-top: 122px; /* Adjust according to navbar height */
+    z-index: 11000;
+    height: 75px;
+    display: flex;
+    align-items: center;
 }
 
 /* Navbar Inner Wrapper */
 .navbar-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo on the left, menu on the right */
+    justify-content: space-between;
+    /* Logo on the left, menu on the right */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -26,9 +25,11 @@ body {
 
 /* Logo Styling */
 .logo img {
-    height: 30px; /* Adjust logo size */
+    height: 30px;
+    /* Adjust logo size */
     width: auto;
 }
+
 
 /* Navigation Menu */
 .main-nav .nav-menu {
@@ -38,14 +39,15 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 /* Navigation Links */
-.main-nav .nav-menu ul{
+.main-nav .nav-menu ul {
     margin-bottom: 0;
 }
+
 .main-nav .nav-menu li {
     display: inline-block;
     list-style: none;
@@ -54,17 +56,17 @@ body {
 }
 
 .main-nav .nav-menu li a {
-    display: inline-block; /* Ensures it doesn’t stretch */
-    white-space: nowrap; /* Prevents wrapping */
+    display: inline-block;
+    white-space: nowrap;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 10px 15px;
+    padding: 0px 15px;
     transition: color 0.3s ease-in-out;
 }
 
 .main-nav .nav-menu li a:hover {
-    color: #5ea335; /* Gold color on hover */
+    color: #5ea335;
 }
 
 /* Hamburger Menu Button */
@@ -79,7 +81,8 @@ body {
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    right: -250px; /* Hidden by default */
+    right: -250px;
+    /* Hidden by default */
     width: 250px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
@@ -93,17 +96,15 @@ body {
     list-style: none;
 }
 
-/* Show Sidebar */
-.mobile-sidebar.active {
-    right: 0;
-}
+
 
 /* Sidebar Content */
 .sidebar-content {
-    padding: 20px;
+    padding: 20px 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 100%;
 }
 
 /* Close Button */
@@ -117,12 +118,19 @@ body {
 /* Mobile Navigation Menu */
 .mobile-nav-menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 5px;
+    margin-top: 25px;
+    width: 100%;
 }
 
 .mobile-nav-menu li {
-    padding: 12px 0;
+    padding: 10px 10px;
+    
+}
+
+.mobile-nav-menu li:hover{
+    background: #5ea335;
+    border-radius: 5px;
 }
 
 .mobile-nav-menu li a {
@@ -130,19 +138,154 @@ body {
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease-in-out;
-}
-
-.mobile-nav-menu li a:hover {
-    color: #5ea335;
+    padding: 0px 5px;
 }
 
 /* Google Translate */
-.gt_white_content a{
+.gt_white_content a {
     color: black
 }
 
+
+
+/* Search Bar */
+/* Search Icon */
+.search-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.search-toggle .dashicons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-toggle .dashicons-search {
+    scale: 1.3;
+    color: rgb(231, 222, 222);
+}
+
+
+.search-container {
+    position: absolute;
+    display: flex;
+    transform: scale(0.95);
+    background: transparent;
+    right: 7.5vw;
+    visibility: hidden;
+    /* Use visibility instead of display */
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+
+}
+
+.search-container.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    /* Make it visible when active */
+}
+
+.main-nav.hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.close-search {
+    background: none;
+    border: none;
+    /* Remove border */
+    cursor: pointer;
+    /* Make it clickable */
+    margin-right: 10px;
+    /* Add space between icon and input */
+    /* transition: transform 0.2s ease-in-out; */
+}
+
+.close-search span {
+    rotate: 45deg;
+    /* Rotate the line */
+    color: white;
+    /* Set icon color */
+    font-size: 24px;
+    /* Adjust icon size */
+}
+
+.close-search .dashicons-plus-alt2:hover {
+    color: red;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between input and button */
+}
+
+.search-form input {
+    width: 30vw;
+    /* Adjust width as needed */
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: transparent;
+    /* No background */
+    color: white;
+}
+
+.search-form button {
+    background: none;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #5ea335;
+    /* Gold color on hover */
+}
+
+.sidebar-search-form {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.sidebar-search-form input[type="text"] {
+    width: 100%;
+    /* height: 40px; */
+    background: transparent;
+    border: 1px solid #ccc; /* Adjust border color as needed */
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+}
+
+.sidebar-search-form button {
+    background: none;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100px;
+}
+
+.sidebar-search-form button:hover {
+    background-color: green;
+    color: #fff; /* Adjust text color as needed */
+}
+
 /* Show Hamburger Button on Mobile */
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .menu-toggle {
         display: block;
     }
@@ -150,8 +293,19 @@ body {
     .main-nav {
         display: none;
     }
+
+    /* Show Sidebar */
+    .mobile-sidebar.active {
+        right: 0;
+    }
+
+    .search-container, .search-container.active {
+        visibility: hidden;
+    }
+
+    .site-navbar {
+        background: rgb(24, 24, 24);
+    }
 }
 
-@media screen and (max-width: 575px){
-
-}
+@media screen and (max-width: 575px) {}

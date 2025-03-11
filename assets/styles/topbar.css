@@ -58,11 +58,11 @@
 }
 
 .topbar-location .dashicons {
-    height: 24px;
-    width: 24px;
+    /* height: 24px; */
+    /* width: 24px; */
     border-radius: 50%;
-    font-size: 1rem;
-    background-color: #5ea335;
+    font-size: 1.5rem;
+    /* background-color: #5ea335; */
     color: white;
     display: flex;
     align-items: center;
