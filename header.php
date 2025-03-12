@@ -25,10 +25,10 @@
     <div class="top-bar">
         <div class="container">
             <div class="dashicons-div">
-                <a href="https://www.facebook.com/" target="_blank"><span
+                <a href="https://www.facebook.com/profile.php?id=61569044551546" target="_blank"><span
                         class="dashicons dashicons-facebook"></span></a>
-                <a href="https://www.youtube.com/" target="_blank"><span class="dashicons dashicons-youtube"></span></a>
-                <a href="https://www.linkedin.com/" target="_blank"><span
+                <a href="https://www.youtube.com/@xinsheng-elec" target="_blank"><span class="dashicons dashicons-youtube"></span></a>
+                <a href="https://www.linkedin.com/company/xinsheng-electronic-co-ltd/" target="_blank"><span
                         class="dashicons dashicons-linkedin"></span></a>
             </div>
             <div class="location-translate-div">

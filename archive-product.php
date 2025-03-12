@@ -1,32 +1,19 @@
 <?php get_header(); ?>
 
-<div class="archive-header">
-    <h2><?php the_archive_title(); ?></h2>
-</div>
-<div class="breadcrumbs">
-    <a href="<?php echo home_url(); ?>">Home</a> &gt; 
-    <a href="<?php echo home_url('/products'); ?>">Products</a> &gt; 
-
-    <?php
-if (is_tax('product_category')) {
-    $term = get_queried_object();
-    $parent = get_term($term->parent, 'product_category');
-    if ($term->parent) {
-        echo '<a href="' . get_term_link($parent) . '">' . $parent->name . '</a> &gt; ';
-    }
-    echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a> ';
-}
+<?php 
+$page_title = preg_replace('/^[^:]+:\s*/', '', get_the_archive_title()); // Remove any text before ":"  
+$page_description = "Explore More About Xinsheng Products";  
+$page_banner_image = "https://vexoniq.com/wp-content/uploads/2025/03/page-banner-narrowed-3.jpg";  
+include get_template_directory() . '/structure_components/banner_and_directory.php';  
 ?>
 
-</div>
-
-
 <div class="container">
-    <div class="content-wrapper">
-        
-        <!-- Main Content: Search Results or Product Listings -->
+<?php include get_template_directory() . '/structure_components/maintenance.php'; ?>
+
+    <!-- <div class="content-wrapper">
+
         <div class="main-content">
-            <?php 
+            <?php
             // Check if there's a search query
             if (isset($_GET['s']) && !empty($_GET['s'])) {
                 // Get the search query
@@ -34,9 +21,9 @@ if (is_tax('product_category')) {
 
                 // WP_Query to search products
                 $args = array(
-                    'post_type'      => 'product', // Make sure 'product' is correct
+                    'post_type' => 'product', // Make sure 'product' is correct
                     'posts_per_page' => 20,
-                    's'              => $search_query, // The search term
+                    's' => $search_query, // The search term
                 );
 
                 // Execute the query
@@ -67,7 +54,7 @@ if (is_tax('product_category')) {
                     <div class="post-box">
                         <a href="<?php the_permalink(); ?>" class="full-link"></a>
                         <div class="post-meta">
-                            <span class="post-date"><?php echo get_the_date(); ?></span> | 
+                            <span class="post-date"><?php echo get_the_date(); ?></span> |
                             <span class="post-author"><?php the_author(); ?></span>
                         </div>
                         <h2 class="post-title"><?php the_title(); ?></h2>
@@ -78,17 +65,16 @@ if (is_tax('product_category')) {
             ?>
         </div>
 
-        <!-- Sidebar: Product Categories with Dropdowns -->
         <aside class="sidebar">
             <h3>Product Categories</h3>
-            <?php 
+            <?php
             // Get product categories
             $args = array(
-                'taxonomy'     => 'product_category', // Make sure 'product_category' is correct
-                'orderby'      => 'name',
-                'order'        => 'ASC',
-                'parent'       => 0, // Top-level categories
-                'hide_empty'   => false,
+                'taxonomy' => 'product_category', // Make sure 'product_category' is correct
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'parent' => 0, // Top-level categories
+                'hide_empty' => false,
             );
             $parent_categories = get_terms($args);
 
@@ -102,13 +88,13 @@ if (is_tax('product_category')) {
                             → Go to <?php echo $parent->name; ?>
                         </option>
 
-                        <?php 
+                        <?php
                         // Get child categories
                         $child_args = array(
-                            'taxonomy'   => 'product_category',
-                            'orderby'    => 'name',
-                            'order'      => 'ASC',
-                            'parent'     => $parent->term_id,
+                            'taxonomy' => 'product_category',
+                            'orderby' => 'name',
+                            'order' => 'ASC',
+                            'parent' => $parent->term_id,
                             'hide_empty' => false,
                         );
 
@@ -124,7 +110,7 @@ if (is_tax('product_category')) {
             <?php } ?>
         </aside>
 
-    </div>
+    </div> -->
 </div>
 
 <?php get_footer(); ?>

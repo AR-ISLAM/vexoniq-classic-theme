@@ -4,19 +4,15 @@ Template Name: News Page
 */
 get_header(); ?>
 
-<main>
-    <h1>News</h1>
-    <?php
-    $news_query = new WP_Query(['category_name' => 'news']);
-    if ($news_query->have_posts()) :
-        while ($news_query->have_posts()) : $news_query->the_post();
-            the_title('<h2>', '</h2>');
-            the_excerpt();
-        endwhile;
-    else :
-        echo '<p>No news articles found.</p>';
-    endif;
-    ?>
-</main>
+<?php 
+$page_title = "Xinsheng News";
+$page_description = "Get the Latest Update of our Team!";
+$page_banner_image = "https://vexoniq.com/wp-content/uploads/2025/03/page-banner-narrowed-2.jpg";
+include get_template_directory() . '/structure_components/banner_and_directory.php'; ?>
+<div class="container">
+    <?php include get_template_directory() . '/structure_components/maintenance.php'; ?>
+</div>
+
+</div>
 
 <?php get_footer(); ?>

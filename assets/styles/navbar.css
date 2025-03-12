@@ -17,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Logo on the left, menu on the right */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -26,10 +25,8 @@
 /* Logo Styling */
 .logo img {
     height: 30px;
-    /* Adjust logo size */
     width: auto;
 }
-
 
 /* Navigation Menu */
 .main-nav .nav-menu {
@@ -82,7 +79,6 @@
     position: fixed;
     top: 0;
     right: -250px;
-    /* Hidden by default */
     width: 250px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
@@ -91,12 +87,6 @@
     transition: right 0.3s ease-in-out;
     z-index: 12000;
 }
-
-.mobile-sidebar li {
-    list-style: none;
-}
-
-
 
 /* Sidebar Content */
 .sidebar-content {
@@ -124,29 +114,62 @@
 }
 
 .mobile-nav-menu li {
-    padding: 10px 10px;
-    
+    padding: 0;
+    margin: 0;
 }
 
-.mobile-nav-menu li:hover{
+.mobile-nav-menu li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box; 
+    border-radius: 5px;
+}
+
+.mobile-nav-menu li a:hover {
+    color: white;
     background: #5ea335;
     border-radius: 5px;
 }
 
-.mobile-nav-menu li a {
+/* Sidebar Search Form */
+.sidebar-search-form {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.sidebar-search-form input[type="text"] {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 5px;
     color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
-    padding: 0px 5px;
 }
 
-/* Google Translate */
-.gt_white_content a {
-    color: black
+.sidebar-search-form button {
+    background: none;
+    color: white;
+    border: 1px solid #545454;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5vh;
+    width: 100px;
 }
 
-
+.sidebar-search-form button:hover {
+    background-color: green;
+    color: #fff;
+}
 
 /* Search Bar */
 /* Search Icon */
@@ -167,7 +190,7 @@
     color: rgb(231, 222, 222);
 }
 
-
+/* Search Container */
 .search-container {
     position: absolute;
     display: flex;
@@ -175,18 +198,16 @@
     background: transparent;
     right: 7.5vw;
     visibility: hidden;
-    /* Use visibility instead of display */
     transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
-
 }
 
 .search-container.active {
     transform: scale(1);
     opacity: 1;
     visibility: visible;
-    /* Make it visible when active */
 }
 
+/* Hide Main Navigation When Search is Active */
 .main-nav.hidden {
     display: none;
     opacity: 0;
@@ -194,45 +215,37 @@
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
+/* Close Search Button */
 .close-search {
     background: none;
     border: none;
-    /* Remove border */
     cursor: pointer;
-    /* Make it clickable */
     margin-right: 10px;
-    /* Add space between icon and input */
-    /* transition: transform 0.2s ease-in-out; */
 }
 
 .close-search span {
     rotate: 45deg;
-    /* Rotate the line */
     color: white;
-    /* Set icon color */
     font-size: 24px;
-    /* Adjust icon size */
 }
 
 .close-search .dashicons-plus-alt2:hover {
     color: red;
 }
 
+/* Search Form */
 .search-form {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Space between input and button */
 }
 
 .search-form input {
     width: 30vw;
-    /* Adjust width as needed */
     padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: transparent;
-    /* No background */
     color: white;
 }
 
@@ -247,41 +260,6 @@
 
 .search-form button:hover {
     background: #5ea335;
-    /* Gold color on hover */
-}
-
-.sidebar-search-form {
-    margin-top: auto;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-}
-
-.sidebar-search-form input[type="text"] {
-    width: 100%;
-    /* height: 40px; */
-    background: transparent;
-    border: 1px solid #ccc; /* Adjust border color as needed */
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    border-radius: 5px;
-    color: white;
-}
-
-.sidebar-search-form button {
-    background: none;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 8px 10px;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 100px;
-}
-
-.sidebar-search-form button:hover {
-    background-color: green;
-    color: #fff; /* Adjust text color as needed */
 }
 
 /* Show Hamburger Button on Mobile */
@@ -308,4 +286,7 @@
     }
 }
 
-@media screen and (max-width: 575px) {}
+/* Google Translate */
+.gt_white_content a {
+    color: black;
+}

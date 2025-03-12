@@ -4,7 +4,7 @@ Theme URI: https://vexoniq.com
 Author: AR ISLAM
 Author URI: https://vexoniq.com
 Description: Vexoniq Original Theme, specially designed for Vexoniq Blog.
-Version: 1.0
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-header, flexible-header, blog, portfolio
@@ -12,8 +12,6 @@ Text Domain: vexoniq-classic-theme
 */
 
 /* Import Library */
-
-
 
 
 
@@ -82,9 +80,10 @@ body {
     height: 100vh;
     font-family: 'Nunito', sans-serif;
     margin: 0;
+    padding-top: 42px;
 }
 
-.container {;
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -97,8 +96,6 @@ body {
     margin: auto;
     padding: 20px;
 }
-
-
 
 
 /* Homepage Content */
@@ -242,6 +239,5 @@ body {
     body{
         padding-top: 115px;
     }
-
-
 }
+
