@@ -53,7 +53,8 @@
 }
 
 .main-nav .nav-menu li a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
     color: white;
     text-decoration: none;
@@ -62,9 +63,83 @@
     transition: color 0.3s ease-in-out;
 }
 
+.main-nav .nav-menu li a span.dashicons {
+    display: inline-flex;
+    align-items: center;
+}
+
 .main-nav .nav-menu li a:hover {
     color: #5ea335;
 }
+
+/* Products Category */
+/* Category Section Styling */
+.products_category {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    top: 116px;
+    z-index: 9999;
+}
+
+/* Category Box Styling (Removed Effects) */
+.category-box {
+    background: transparent;
+    border: none !important;
+    box-shadow: none;
+    transition: none;
+}
+
+/* Category Title */
+.category-box h3 {
+    font-size: 20px;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.category-box h3 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.category-box h3 a:hover {
+    color: #3262bd;
+}
+
+/* Subcategory List */
+.subcategory-list ul {
+    display: block; /* Ensure it behaves as a block element */
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.subcategory-list ul li {
+    list-style: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    color: #ddd;
+}
+
+.subcategory-list ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.subcategory-list ul li a:hover{
+    color: #5ea335;
+}
+
+/* First category’s subcategory list should also be in 1 column */
+.category-box:first-child .subcategory-list ul {
+    display: block; /* Ensure it's not in grid */
+}
+
+
 
 /* Hamburger Menu Button */
 .menu-toggle {
@@ -73,6 +148,12 @@
     cursor: pointer;
     color: white;
 }
+
+.nav-menu .current-menu-item a {
+    color: #5ea335 !important;
+    position: relative;
+}
+
 
 /* Mobile Sidebar (Hidden by Default) */
 .mobile-sidebar {
