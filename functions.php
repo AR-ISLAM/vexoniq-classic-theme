@@ -31,7 +31,8 @@ function my_theme_enqueue_styles()
             'floating-contact-style' => '/assets/styles/floating-contact.css',
             'navbar-style' => '/assets/styles/navbar.css',
             'front-page-style' => '/assets/styles/front-page.css',
-            'components-style' => '/assets/styles/components.css'
+            'components-style' => '/assets/styles/components.css',
+            'browse-products' => '/assets/styles/browse-products.css'
         ];
     
         foreach ($styles as $handle => $path) {
@@ -73,4 +74,5 @@ function remove_custom_fields_meta_box() {
     remove_meta_box('postcustom', 'product', 'normal'); // Hides the Custom Fields box for products
 }
 add_action('admin_menu', 'remove_custom_fields_meta_box');
+
 ?>

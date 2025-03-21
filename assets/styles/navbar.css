@@ -72,16 +72,17 @@
     color: #5ea335;
 }
 
+
 /* Products Category */
 /* Category Section Styling */
 .products_category {
-    display: none;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 1);
     width: 100%;
     top: 116px;
     z-index: 9999;
 }
+
 
 /* Category Box Styling (Removed Effects) */
 .category-box {

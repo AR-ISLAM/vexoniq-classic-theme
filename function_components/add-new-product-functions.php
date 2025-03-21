@@ -20,10 +20,19 @@ function add_product_intro_meta_box() {
         'normal',                     // Context (normal, side, or advanced)
         'high'                        // Priority
     );
+    
+    add_meta_box(
+        'product_short_title_meta_box', // Unique ID
+        'Short Title',                 // Meta Box Title
+        'render_product_short_title_meta_box', // Callback Function
+        'product',                     // Post Type
+        'normal',                       // Context
+        'high'                          // Priority
+    );
 }
 add_action('add_meta_boxes', 'add_product_intro_meta_box');
 
-// Callback function to render the meta box
+// Callback function to render the intro meta box
 function render_product_intro_meta_box($post) {
     // Retrieve existing values if available
     $product_intro = get_post_meta($post->ID, 'product_intro', true);
@@ -39,10 +48,24 @@ function render_product_intro_meta_box($post) {
     ));
 }
 
+// Callback function to render the short title meta box
+function render_product_short_title_meta_box($post) {
+    // Retrieve existing value
+    $short_title = get_post_meta($post->ID, 'short_title', true);
+    
+    // Security nonce for data validation
+    wp_nonce_field('save_product_short_title_meta', 'product_short_title_nonce');
+    
+    echo '<input type="text" name="short_title" value="' . esc_attr($short_title) . '" style="width:100%;" maxlength="100" placeholder="Enter short title (max 6 words)">';
+}
+
 // Save the meta box data
-function save_product_intro_meta_box_data($post_id) {
+function save_product_meta_boxes_data($post_id) {
     // Check if nonce is set and valid
     if (!isset($_POST['product_intro_nonce']) || !wp_verify_nonce($_POST['product_intro_nonce'], 'save_product_intro_meta')) {
+        return;
+    }
+    if (!isset($_POST['product_short_title_nonce']) || !wp_verify_nonce($_POST['product_short_title_nonce'], 'save_product_short_title_meta')) {
         return;
     }
 
@@ -56,9 +79,22 @@ function save_product_intro_meta_box_data($post_id) {
         return;
     }
 
-    // Sanitize and save the input
+    // Sanitize and save the introduction input
     if (isset($_POST['product_intro'])) {
         update_post_meta($post_id, 'product_intro', wp_kses_post($_POST['product_intro']));
     }
+
+    // Sanitize and save the short title input
+    if (isset($_POST['short_title'])) {
+        $short_title = sanitize_text_field($_POST['short_title']);
+        
+        // Limit to 6 words
+        $words = explode(' ', $short_title);
+        if (count($words) > 6) {
+            $short_title = implode(' ', array_slice($words, 0, 6));
+        }
+        
+        update_post_meta($post_id, 'short_title', $short_title);
+    }
 }
-add_action('save_post', 'save_product_intro_meta_box_data');
+add_action('save_post', 'save_product_meta_boxes_data');

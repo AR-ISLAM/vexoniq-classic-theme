@@ -53,7 +53,7 @@ add_filter('wp_nav_menu_objects', 'add_arrow_to_products_menu', 10, 2);
                     <span class="dashicons dashicons-plus-alt2"></span>
                 </button>
                 <form action="<?php echo home_url('/products/'); ?>" method="GET" class="search-form">
-                    <input type="text" name="s" placeholder="Search products..." required>
+                    <input type="text" name="search" placeholder="Search products..." required>
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -65,7 +65,6 @@ add_filter('wp_nav_menu_objects', 'add_arrow_to_products_menu', 10, 2);
     </div>
 </header>
 
-<!-- Products Category -->
 <!-- Products Category -->
 <div class="products_category" id="products_category">
     <div class="container-lg">
@@ -174,6 +173,9 @@ add_filter('wp_nav_menu_objects', 'add_arrow_to_products_menu', 10, 2);
         const productsCategory = document.getElementById("products_category");
 
         if (productsMenu && productsCategory) {
+            // Ensure the category is hidden on initial load
+            productsCategory.style.display = "none";
+
             productsMenu.addEventListener("mouseenter", function () {
                 productsCategory.style.display = "block";
             });
@@ -183,7 +185,7 @@ add_filter('wp_nav_menu_objects', 'add_arrow_to_products_menu', 10, 2);
                     if (!productsCategory.matches(":hover")) {
                         productsCategory.style.display = "none";
                     }
-                }, 200);
+                }, 5000);
             });
 
             productsCategory.addEventListener("mouseleave", function () {
@@ -195,7 +197,6 @@ add_filter('wp_nav_menu_objects', 'add_arrow_to_products_menu', 10, 2);
             });
         }
     });
-
 
     document.addEventListener("DOMContentLoaded", function () {
         const mobileMenu = document.getElementById("mobile-menu");
